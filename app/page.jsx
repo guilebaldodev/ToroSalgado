@@ -3,6 +3,7 @@ import Testimonial from "./ui/Testimonial";
 import Link from "next/link";
 import { testimonios } from "./consts";
 import RentalDetails from "./ui/RentalDetails";
+import RentalForm from "./ui/RentalForm";
 
 export default function Home() {
   return (
@@ -10,18 +11,19 @@ export default function Home() {
       {/*  */}
 
         <div
-          className="flex pt-2 h-full
+          className="flex  h-full
+          gap-4
          w-[90%] mx-auto 
         custom-lg:w-[90%] custom-lg:px-8
         md:flex-col-reverse
         sm:pt-0 
         xs:!px-4
         pb-8
-        mt-16
+        mt-8
         
         "
         >
-          <div className="w-[60%] flex pt-8 flex-col md:w-[100%] ">
+          <div className="w-[50%] flex pt-8 flex-col ">
             
             <h4 className="font-medium text-lg text-[#8E8F9E]">Tu Aliado para Fiestas Inolvidables
             </h4>
@@ -41,27 +43,21 @@ export default function Home() {
             Transforma tu fiesta en un evento único con nuestro toro mecánico. Perfecto para cumpleaños, eventos familiares o fiestas empresariales en Acapulco. ¡Seguridad y diversión aseguradas para todos!
 
             </p>
-
-            <div className="flex py-4 mt-3 gap-4 ">
-              <button
-                className="text-2xl px-4 py-2  border rounded-xl"
-              >
-                <span className="text-[#FE572B] border-[#FE572B]">
-                Elige la fecha de tu evento
-
-                </span>
-              </button>
+            {/*  Inicia Formulario */}
+            <div className="">
+              <RentalForm></RentalForm>
             </div>
+            {/* Termina formulario */}
           </div>
 
           <div
-            className="w-[40%]  flex justify-center items-end
+            className="w-[50%]  flex justify-center items-end
                 md:w-[100%] mx-auto
                 xs:w[100%]
             "
           >
             <Image
-              src={"/img/bull-image.png"}
+              src={"/img/header-bull.jpeg"}
               style={{
                 objectFit: "cover",
                 width: "auto",
@@ -90,19 +86,20 @@ export default function Home() {
         <h2 className="text-4xl font-semibold py-8">Como funcionamos</h2>
         <div className="grid grid-cols-3 gap-6">
           <div>
-            <img src={"/img/phone.webp"} className="w-[250px] h-[250px]"></img>
+            {/* <img src={"/img/phone.webp"} className="w-[250px] h-[250px]"></img> */}
+            <img src={"/img/to-book.svg"} className="w-[250px] h-[250px]"></img>
 
             <h2 className="text-2xl font-semibold py-4">
-              Elige el dia de tu evento
+              Ingresa los datos del evento
             </h2>
 
             <p className="text-xl">
-            Elige el día de tu evento con facilidad. Solo selecciona la fecha que más te convenga y asegura tu lugar para disfrutar de una experiencia única.
+            Elige el día, la hora y el lugar de tu evento con facilidad. Solo selecciona la fecha que más te convenga y asegura tu lugar para disfrutar de una experiencia única.
             </p>
           </div>
 
           <div>
-            <img src={"/img/phone.webp"} className="w-[250px] h-[250px]"></img>
+            <img src={"/img/chat.svg"} className="w-[250px] h-[250px]"></img>
 
             <h2 className="text-2xl font-semibold py-4">
               Reserva online en WhatsApp
@@ -115,7 +112,7 @@ export default function Home() {
           </div>
 
           <div>
-            <img src={"/img/phone.webp"} className="w-[250px] h-[250px]"></img>
+            <img src={"/img/party.svg"} className="w-[250px] h-[250px]"></img>
 
             <h2 className="text-2xl font-semibold py-4">
             Disfruta del día

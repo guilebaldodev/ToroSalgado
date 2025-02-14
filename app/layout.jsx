@@ -1,4 +1,5 @@
 import "./globals.css";
+import Footer from "./ui/Footer";
 import Header from "./ui/Header";
 import { fredoka } from "./ui/fonts";
 
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
       >
         <Header></Header>
         {children}
+        <Footer></Footer>
       </body>
     </html>
   );

@@ -16,7 +16,7 @@ const RentalDetails = () => {
       <div className="flex w-[85%] mx-auto gap-8 py-16">
         <div className="w-[50%]">
           <Image
-            src={"/img/bull-image.png"}
+            src={"/img/header-bull.jpeg"}
             style={{ width: "100%", maxWidth: "550px", borderRadius: "8px" }}
             width={500}
             height={500}

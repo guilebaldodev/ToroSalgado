@@ -32,4 +32,17 @@ body {
   transition: all 0.3s cubic-bezier(1, 0, 1, 0);
 }
 
+.react-calendar{
+  width: 100% !important;
+  margin: 1rem;
+  border: none !important;
+}
+
+
+abbr:where([title]) {
+  text-decoration: none;
+}
+
+
+
 
