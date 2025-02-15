@@ -28,9 +28,14 @@ module.exports = {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(-100%)" },
         },
+        slideIn: {
+          '0%': { transform: 'translateX(-100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+        },
       },
       animation: {
         marquee: "marquee 15s linear infinite",
+        slideIn: 'slideIn 0.4s ease-out forwards',
       },
     },
   },

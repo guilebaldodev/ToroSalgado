@@ -4,11 +4,13 @@ import Link from "next/link";
 import { testimonios } from "./consts";
 import RentalDetails from "./ui/RentalDetails";
 import RentalForm from "./ui/RentalForm";
+import ProductCarousel from "./ui/ProductCarrousel";
 
 export default function Home() {
+
   return (
     <>
-      {/*  */}
+
 
         <div
           className="flex  h-full
@@ -72,28 +74,30 @@ export default function Home() {
         </div>
       {/*  */}
       <div className="py-8  mx-auto w-[90%]">
-        <h2 className="text-4xl font-semibold py-8">
+        <h2 className="text-4xl font-semibold py-8 custom-lg:text-3xl custom-sm:!text-2xl">
           Lo que nuestro clientes dicen
         </h2>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 gap-6 custom-lg:flex custom-lg:flex-col">
               {testimonios && testimonios.map((testimonio)=>(
               <Testimonial testimonial={testimonio}></Testimonial>
               ))}
         </div>
       </div>
+      
+      {/* EVENT DETAILS */}
+      <div className="bg-[#F7F8FC]">
 
-      <div className="py-8  mx-auto w-[90%] bg-[#F7F8FC]">
-        <h2 className="text-4xl font-semibold py-8">Como funcionamos</h2>
-        <div className="grid grid-cols-3 gap-6">
+      <div className="py-8  mx-auto w-[90%] ">
+        <h2 className="text-4xl font-semibold py-8 custom-lg:text-3xl custom-sm:!text-2xl">Como funcionamos</h2>
+        <div className="grid grid-cols-3 gap-6 md:flex md:flex-col">
           <div>
-            {/* <img src={"/img/phone.webp"} className="w-[250px] h-[250px]"></img> */}
             <img src={"/img/to-book.svg"} className="w-[250px] h-[250px]"></img>
 
-            <h2 className="text-2xl font-semibold py-4">
+            <h2 className="text-2xl font-semibold py-4 custom-sm:text-xl">
               Ingresa los datos del evento
             </h2>
 
-            <p className="text-xl">
+            <p className="text-xl custom-sm:text-lg">
             Elige el día, la hora y el lugar de tu evento con facilidad. Solo selecciona la fecha que más te convenga y asegura tu lugar para disfrutar de una experiencia única.
             </p>
           </div>
@@ -101,11 +105,11 @@ export default function Home() {
           <div>
             <img src={"/img/chat.svg"} className="w-[250px] h-[250px]"></img>
 
-            <h2 className="text-2xl font-semibold py-4">
+            <h2 className="text-2xl font-semibold py-4 custom-sm:text-xl">
               Reserva online en WhatsApp
             </h2>
 
-            <p className="text-xl">
+            <p className="text-xl custom-sm:text-lg">
             Una vez elegido el día, serás redirigido a WhatsApp para confirmar tu reserva. Nuestro equipo estará listo para ayudarte a cerrar todos los detalles.
 
             </p>
@@ -114,28 +118,29 @@ export default function Home() {
           <div>
             <img src={"/img/party.svg"} className="w-[250px] h-[250px]"></img>
 
-            <h2 className="text-2xl font-semibold py-4">
+            <h2 className="text-2xl font-semibold py-4 custom-sm:text-xl">
             Disfruta del día
             </h2>
 
-            <p className="text-xl">
+            <p className="text-xl custom-sm:text-lg">
             Llega el día de tu evento y disfruta al máximo de tu experiencia con el toro mecánico. ¡Todo estará listo para que pases un día inolvidable!
-
             </p>
           </div>
         </div>
       </div>
+      </div>
+
 
       {/*  */}
 
-      <div className="py-8 flex  mx-auto w-[80%] gap-4">
-        <div className="w-[50%]">
-          <h2 className="text-4xl font-semibold py-8">
+      <div className="py-8 flex  mx-auto w-[90%] gap-4 custom-lg:flex-col">
+        <div className="w-[50%] custom-lg:w-[100%]">
+          <h2 className="text-4xl font-semibold py-8 custom-lg:text-3xl custom-sm:!text-2xl">
             Somos una garantia de risas y diversion
           </h2>
         </div>
 
-        <div className="w-[50%] grid grid-cols-2 gap-4 gap-y-8">
+        <div className="w-[50%] custom-lg:w-[100%] grid grid-cols-2 gap-4 gap-y-8">
           <div>
             <div className="bg-orange-300 rounded-md flex items-center justify-center w-[80px] h-[80px] p-1">
               <Image
@@ -145,8 +150,8 @@ export default function Home() {
                 style={{ width: "85%", maxWidth: "100px" }}
               ></Image>
             </div>
-            <h3 className="text-2xl font-semibold pt-4 py-2">+100 Eventos</h3>
-            <p className="text-xl">Más de 100 celebraciones exitosas con Toro Salgado</p>
+            <h3 className="text-2xl font-semibold pt-4 py-2 md:text-xl">+100 Eventos</h3>
+            <p className="text-xl md:text-lg">Más de 100 celebraciones exitosas con Toro Salgado</p>
           </div>
 
           <div>
@@ -158,8 +163,8 @@ export default function Home() {
                 style={{ width: "100%", maxWidth: "100px" }}
               ></Image>
             </div>
-            <h3 className="text-2xl font-semibold pt-4 py-2">Gran disponibilidad</h3>
-            <p className="text-xl">¡Escoge la fecha que más te convenga!</p>
+            <h3 className="text-2xl font-semibold pt-4 py-2 md:text-xl">Gran disponibilidad</h3>
+            <p className="text-xl md:text-lg">¡Escoge la fecha que más te convenga!</p>
           </div>
 
           {/*  */}
@@ -173,8 +178,8 @@ export default function Home() {
                 style={{ width: "80%", maxWidth: "100px" }}
               ></Image>
             </div>
-            <h3 className="text-2xl font-semibold pt-4 py-2">En Cualquier Ubicación</h3>
-            <p className="text-xl">Nos desplazamos donde sea necesario</p>
+            <h3 className="text-2xl font-semibold pt-4 py-2 md:text-xl">En Cualquier Ubicación</h3>
+            <p className="text-xl md:text-lg">Nos desplazamos donde sea necesario</p>
           </div>
 
           <div>
@@ -186,8 +191,8 @@ export default function Home() {
                 style={{ width: "100%", maxWidth: "100px" }}
               ></Image>
             </div>
-            <h3 className="text-2xl font-semibold pt-4 py-2">Seguridad</h3>
-            <p className="text-xl">Tu seguridad, nuestra prioridad</p>
+            <h3 className="text-2xl font-semibold pt-4 py-2 md:text-xl">Seguridad</h3>
+            <p className="text-xl md:text-lg">Tu seguridad, nuestra prioridad</p>
           </div>
         </div>
       </div>
@@ -197,6 +202,19 @@ export default function Home() {
       <RentalDetails></RentalDetails>
 
       {/*  */}
+
+      {/* Carrousel */}
+
+      <div className="py-8  mx-auto w-[90%]">
+        <h2 className="text-4xl font-semibold py-8 custom-lg:text-3xl custom-sm:!text-2xl">
+          Galeria de fotos
+        </h2>
+
+        <ProductCarousel></ProductCarousel>
+  
+      </div>
+
+
     </>
   );
 }
