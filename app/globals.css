@@ -109,11 +109,43 @@ abbr:where([title]) {
 
 
 
+@media (max-width: 1200px) {
+
+  .h1{
+    font-size: 40px;
+  }
+  .header-div{
+    width: 95%;
+  }
+
+  .header-img{
+    width: 100% !important;
+  }
+}
+
 
 
 @media (max-width: 1024px) {
   .carousel-height {
     height: 80vh;
+  }
+}
+@media (max-width: 900px) {
+  .header-div{
+    flex-direction: column-reverse;
+    width: 90%;
+  }
+
+  .header-texts{
+    width: 100% !important;
+  }
+
+  .header-img-div{
+    width: 80%;
+  }
+
+  .h1{
+    font-size: 35px;
   }
 }
 
@@ -128,11 +160,27 @@ abbr:where([title]) {
   .carousel-height {
     height: 60vh;
   }
+
+  .header-img-div{
+    width: 90%;
+  }
+
+  .h1{
+    font-size: 32px;
+  }
 }
 
 @media (max-width: 500px) {
   .carousel-height {
     height: 38vh;
+  }
+
+  .header-img-div{
+    width: 100%;
+  }
+
+  .h1{
+    font-size: 28px;
   }
 }
 

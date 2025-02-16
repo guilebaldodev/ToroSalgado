@@ -7,8 +7,18 @@ import SecondStep from "./SecondStep";
 import ThirdStep from "./ThirdStep";
 import FinalStep from "./FinalStep";
 import Image from "next/image";
+import { formatDate } from "@/utils";
 
 const RentalForm = () => {
+
+
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
 
   const [formData, setFormData] = useState({
@@ -94,7 +104,7 @@ const RentalForm = () => {
         <>
           <div className="fixed top-0 left-0 h-full w-full bg-black/40 z-[1000] flex items-center justify-center">
             {/* Contenido aquí */}
-            <div className="bg-white max-h-[90vh] w-[500px] rounded-[10px] scrollbar-none">
+            <div className="bg-white max-h-[90vh] w-[500px] rounded-[10px] scrollbar-none custom-sm:h-[100vh] custom-sm:max-h-[100vh] custom-sm:rounded-none custom-sm:animate-slideIn">
               {/* Titulo */}
 
               <div className="bg-[#F3F6F9] p-2 rounded-[10px] flex justify-between items-center">
@@ -140,7 +150,7 @@ const RentalForm = () => {
                 {setps === 4 && <FinalStep formData={formData}  ></FinalStep>}
               </div>
 
-              <div className="flex justify-end pr-4 pb-4 w-[100%] gap-4 flex-wrap">
+              <div className="flex justify-end pr-4 pb-4 w-[100%] gap-4 flex-wrap ">
                 {(setps>0 && setps<4) &&
                   <>
 
@@ -175,11 +185,21 @@ const RentalForm = () => {
                 {setps==4 &&
                 
                 <button 
-                onClick={() => {  
-                  console.log("Enviando WhatsApp")
-                  }
-                  
-                  } className="bg-white p-4 flex items-center  border text-[#5BC65E] border-[#5BC65E] font-semibold h-[25px] px-8 tracking-wide rounded disabled:opacity-50 ">
+       
+                onClick={() => {
+                  const message = encodeURIComponent(
+                    `¡Hola! Quisiera confirmar mi reservación con los siguientes detalles:\n\n` +
+                      `- Fecha: ${formatDate(formData.date)}\n` +
+                      `- Hora: ${formData.time}\n` +
+                      `- Nombre: ${formData.name}\n` +
+                      `- Teléfono: ${formData.phone}\n` +
+                      `- Dirección: ${formData.location}\n\n`
+                  );
+              
+                  const whatsAppURL = `https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER}?text=${message}`;
+                  window.open(whatsAppURL, "_blank");
+                }}
+       className="bg-white p-4 flex items-center  border text-[#5BC65E] border-[#5BC65E] font-semibold h-[25px] px-8 tracking-wide rounded disabled:opacity-50 ">
                   <span>
                     Confirmar via WhatsApp
                   </span>
@@ -192,19 +212,21 @@ const RentalForm = () => {
       )}
 
       <div className="flex flex-col pt-8">
-        <div className="flex w-[100%] gap-4 flex-wrap">
+        <div className="flex w-[100%] gap-4 flex-wrap custom-sm:flex-col">
           <button
             onClick={() => {
               setModal(true);
             }}
 
             
-            className="bg-customOrange w-[40%] text-white font-semibold h-[45px] px-8 tracking-wide rounded"
+            className="bg-customOrange w-[40%] custom-sm:w-full text-white font-semibold h-[45px] px-8 tracking-wide rounded"
           >
             Reservar
           </button>
 
-          <button className="bg-white w-[40%] border text-[#FE572B] border-[#FE572B] font-semibold h-[45px] px-8 tracking-wide rounded">
+          <button onClick={()=>
+            scrollToSection("galeria")
+          } className="bg-white w-[40%] custom-sm:w-full    border text-[#FE572B] border-[#FE572B] font-semibold h-[45px] px-8 tracking-wide rounded">
             Ver galeria
           </button>
         </div>

@@ -3,6 +3,12 @@ import Link from "next/link";
 import Image from "next/image";
 
 const MobileMenu = ({ onClose }) => {
+
+
+  const message = encodeURIComponent('¡Buenos dias! Me gustaría recibir más información sobre las paginas de toros mecanicos.');
+  const whatsAppURL = `https://wa.me/${process.env.NEXT_PUBLIC_PHONE_NUMBER}?text=${message}`;
+
+
   return (
     <div className="animate-slideIn fixed inset-0 bg-white z-50 flex flex-col">
       {/* Barra superior del menú móvil */}
@@ -32,7 +38,7 @@ const MobileMenu = ({ onClose }) => {
         <div className="flex flex-col mt-6 text-lg">
           <div className="border-b border-gray-200 cursor-pointer flex flex-col">
             <Link
-              href="/clientes"
+              href="#testimonios"
               onClick={onClose}
               className="ml-8 no-underline py-4 text-[20px] text-black font-medium"
             >
@@ -42,7 +48,7 @@ const MobileMenu = ({ onClose }) => {
 
           <div className="border-b border-gray-200 cursor-pointer flex flex-col">
             <Link
-              href="/tutorial"
+              href="#tutorial"
               onClick={onClose}
               className="ml-8 no-underline py-4 text-[20px] text-black font-medium"
             >
@@ -52,7 +58,7 @@ const MobileMenu = ({ onClose }) => {
 
           <div className="border-b border-gray-200 cursor-pointer flex flex-col">
             <Link
-              href="/galeria"
+              href="#galeria"
               onClick={onClose}
               className="ml-8 no-underline py-4 text-[20px] text-black font-medium"
             >
@@ -60,19 +66,10 @@ const MobileMenu = ({ onClose }) => {
             </Link>
           </div>
 
-          <div className="border-b border-gray-200 cursor-pointer flex flex-col">
-            <Link
-              href="/contacto"
-              onClick={onClose}
-              className="ml-8 no-underline py-4 text-[20px] text-black font-medium"
-            >
-              Reservar
-            </Link>
-          </div>
         </div>
 
         <Link
-          href={"/ss"}
+          href={whatsAppURL}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Chatea con nosotros en WhatsApp"
@@ -83,7 +80,7 @@ const MobileMenu = ({ onClose }) => {
             alt=""
             className="w-[25px] mr-2"
           />
-          <p className="font-medium text-base">Habla con nosotros</p>
+          <p className="font-medium text-base">Contacta al programador</p>
         </Link>
       </div>
     </div>

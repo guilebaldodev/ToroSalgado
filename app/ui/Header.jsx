@@ -41,15 +41,15 @@ const Header = () => {
 
             <div className="custom-lg:hidden">
                 <nav className="space-x-4 text-xl font-medium">
-                        <Link href={"/clientes"}>Clientes</Link>
-                        <Link href={"/clientes"}>Tutorial</Link>
-                        <Link href={"/clientes"}>Galeria</Link>
+                        <Link href={"#testimonios"}>Clientes</Link>
+                        <Link href={"#tutorial"}>Tutorial</Link>
+                        <Link href={"#galeria"}>Galeria</Link>
                 </nav>
             </div>
-
+{/* 
                 <button className="py-2 px-4 rounded-2xl text-xl font-medium border border-[#dfdfe5] custom-lg:hidden">
                     Reservar
-                </button>
+                </button> */}
 
             <Image onClick={()=>{
                 console.log("Click")

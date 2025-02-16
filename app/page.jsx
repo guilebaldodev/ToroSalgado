@@ -5,27 +5,27 @@ import { testimonios } from "./consts";
 import RentalDetails from "./ui/RentalDetails";
 import RentalForm from "./ui/RentalForm";
 import ProductCarousel from "./ui/ProductCarrousel";
+import WhatsAppButton from "./ui/WhatsAppButton";
 
 export default function Home() {
 
   return (
     <>
 
+      <WhatsAppButton></WhatsAppButton>
+
 
         <div
           className="flex  h-full
-          gap-4
+          gap-2
          w-[90%] mx-auto 
-        custom-lg:w-[90%] custom-lg:px-8
-        md:flex-col-reverse
-        sm:pt-0 
-        xs:!px-4
+          header-div
         pb-8
         mt-8
         
         "
         >
-          <div className="w-[50%] flex pt-8 flex-col ">
+          <div className="w-[60%] flex pt-8 flex-col justify-center header-texts">
             
             <h4 className="font-medium text-lg text-[#8E8F9E]">Tu Aliado para Fiestas Inolvidables
             </h4>
@@ -33,9 +33,7 @@ export default function Home() {
               className="
                 text-5xl py-4 leading-tight 
                 font-semibold
-                custom-lg:text-4xl
-                sm:!text-3xl
-                xs:!text-2xl
+                h1
                 "
             >
               Toro Salgado: La Estrella de tus Eventos
@@ -53,27 +51,29 @@ export default function Home() {
           </div>
 
           <div
-            className="w-[50%]  flex justify-center items-end
-                md:w-[100%] mx-auto
-                xs:w[100%]
+            className="w-[40%]  header-img-div flex justify-center items-end
+     mx-auto
+           
             "
           >
             <Image
               src={"/img/header-bull.jpeg"}
+              // src={"/img/removed.png"}
+              className="header-img"
               style={{
-                objectFit: "cover",
-                width: "auto",
+                width: "90%",
+                objectFit:"cover",
                 borderRadius:"10px",
                 height: "100%",
-                maxHeight: "480px",
+                maxHeight: "600px",
               }}
-              width={500}
-              height={500}
+              width={600}
+              height={600}
             ></Image>
           </div>
         </div>
       {/*  */}
-      <div className="py-8  mx-auto w-[90%]">
+      <div id="testimonios" className="py-8  mx-auto w-[90%]">
         <h2 className="text-4xl font-semibold py-8 custom-lg:text-3xl custom-sm:!text-2xl">
           Lo que nuestro clientes dicen
         </h2>
@@ -85,7 +85,7 @@ export default function Home() {
       </div>
       
       {/* EVENT DETAILS */}
-      <div className="bg-[#F7F8FC]">
+      <div id="tutorial" className="bg-[#F7F8FC]">
 
       <div className="py-8  mx-auto w-[90%] ">
         <h2 className="text-4xl font-semibold py-8 custom-lg:text-3xl custom-sm:!text-2xl">Como funcionamos</h2>
@@ -205,7 +205,7 @@ export default function Home() {
 
       {/* Carrousel */}
 
-      <div className="py-8  mx-auto w-[90%]">
+      <div id="galeria" className="py-8  mx-auto w-[90%]">
         <h2 className="text-4xl font-semibold py-8 custom-lg:text-3xl custom-sm:!text-2xl">
           Galeria de fotos
         </h2>

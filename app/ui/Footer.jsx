@@ -16,17 +16,19 @@ const Footer = () => {
 
             <div className="w-[90%] mx-auto flex py-8 justify-evenly md:flex-col ">
        
-                <div className="flex flex-col md:text-center pb-6">
+                <div className="flex flex-col md:text-center ">
                     <h4 className="text-lg pb-2 font-medium">Eventos</h4>
-                    <Link className="text-white " href="/servicios/desarrollo-web">Cumpleaños</Link>
-                    <Link className="text-white " href="/servicios/eccomerce">Reuniones</Link>
-                    <Link className="text-white " href="/servicios/software">Fiestas infantiles</Link>
+                    <ul className="flex-col md:text-center pb-6 flex"> 
+                        <li>Cumpleaños</li>
+                        <li>Reuniones</li>
+                        <li>Fiestas infantiles</li>
+                    </ul>
                 </div>
                 <div className="flex flex-col md:text-center pb-6">
                     <h4 className="pb-2 text-lg font-medium">Empresa</h4>
-                    <Link className="text-white" href="/casos-de-exito">Clientes</Link>
-                    <Link className="text-white" href="/nosotros">Tutorial</Link>
-                    <Link className="text-white" href="/contacto">Galeria de fotos</Link>
+                    <Link className="text-white" href="#testimonios">Clientes</Link>
+                    <Link className="text-white" href="#tutorial">Tutorial</Link>
+                    <Link className="text-white" href="#galeria">Galeria de fotos</Link>
                 </div>
                 <div className="flex flex-col md:text-center ">
                     <h4 className="pb-2 text-lg font-medium ">Contacto</h4>
@@ -46,6 +48,9 @@ const Footer = () => {
                     </ul>
                 </div>
             </div>
+
+
+            <div className="w-[90%] py-4 mx-auto">¿Quieres una pagina asi? Contacta al programador al numero: 7443112193</div>
         </footer>
     </> );
 }

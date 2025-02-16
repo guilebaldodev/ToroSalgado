@@ -1,13 +1,12 @@
+import { formatDate } from "@/utils";
 import Image from "next/image";
 import Link from "next/link";
 
 const FinalStep = ({ formData }) => {
 
-  const formatDate = (isoString) => {
-    const date = new Date(isoString);
-    const options = { day: 'numeric', month: 'long', year: 'numeric' };
-    return date.toLocaleDateString('es-ES', options);
-  };
+
+
+
 
 
   return (
