@@ -39,10 +39,7 @@ const FinalStep = ({ formData }) => {
 
         <p className="py-4">
           Para confirmar con tu reserva y el pago, puedes enviarnos un mensaje
-          por{" "}
-          <Link href="/ss" target="_blank" className="text-green-500 underline">
-            WhatsApp
-          </Link>
+          por WhatsApp
           . Si prefieres esperar, nos comunicaremos contigo lo más pronto
           posible.
         </p>
